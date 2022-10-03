@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>NPC lookup</title>
+        <meta name="description" content="Old School Runescape NPC lookup">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon//favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/open-props">
+        <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="api/MediawikiJS.js"></script>
+    </head>
+    <body>
+        <section>
+        <header>
+            Old School Runescape NPC lookup
+        </header>
+        <div id=searchbar>
+            <input type="text" name="containLetters" id="query" placeholder="Enter characters here..." />
+            <button type="submit" id="searchNames" >search</button>
+        </div>
+        
+        <div id="output" readonly ></div>
+        </section>
+        <footer>
+            made by <a href="http://odinn.nl">Odinn Hullekes</a>.</br><sub>'Runescape', 'Old School Runescape', 'Jagex' and Jagex ltd brands are copyright of Jagex ltd.</sub>
+        </footer>
+        
+        <script src="app.js"></script>
+        
+        
+    </body>
+</html>
