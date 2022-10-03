@@ -18,6 +18,9 @@ body {
 header {
 	width: 80vw;
 }
+img{
+    width: 100px;
+}
 header {
 	padding-top: var(--size-4);
 	font-size: var(--size-7);
@@ -52,6 +55,13 @@ button:hover {
 button:active {
 	background-color: var(--yellow-9);
 	padding: var(--size-1) var(--size-2);
+}
+.rule{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+
 }
 #searchbar {
 	width: calc(100%);

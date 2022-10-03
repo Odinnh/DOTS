@@ -6,8 +6,8 @@ let allITEMS = []
 let options = {
     action: 'query',
     list: 'categorymembers',
-    cmtitle: 'Category:Free-to-play items',
-    cmlimit: 'max',
+    cmtitle: 'Category:Item_inventory_images',
+    cmlimit: '500',
     cmcontinue: ''
 }
 
@@ -28,14 +28,39 @@ function continueQuery(data) {
     WIKI.send(options, continueQuery)
 
 }
-
+// https://oldschool.runescape.wiki/images/'Beedy-eye' Jones chathead.png.png
+// https://oldschool.runescape.wiki/images/'Beedy-eye'_Jones_chathead.png
+// https://oldschool.runescape.wiki/images/'Beedy-eye'_Jones chathead.png"
 function populateField(regex) {
     RESULTS.innerHTML = ''
     let response = ''
     allITEMS.forEach(i => {
         i = ('? ? ? ?'==i)?'&#63; &#63; &#63; &#63;':i
+        
+        let filename = i.replaceAll(/File\:/ig, '').replace(/\s/ig,'_')
+        let pathName = i.replaceAll(/File\:/ig, '')
+        .replaceAll(/Category\:/ig, '')
+        .replace(/\s/ig,'_')
+        .replaceAll(/_chathead.png/ig,'')
+        .replaceAll(/_1.png/ig,'')
+        .replaceAll(/_2.png/ig,'')
+        .replaceAll(/_3.png/ig,'')
+        .replaceAll(/_4.png/ig,'')
+        .replaceAll(/_5.png/ig,'')
+        .replaceAll(/_6.png/ig,'')
+        .replaceAll(/_7.png/ig,'')
+        .replaceAll(/_8.png/ig,'')
+        .replaceAll(/_9.png/ig,'')
+        .replaceAll(/_10.png/ig,'')
+        .replaceAll(/_20.png/ig,'')
+        .replaceAll(/_25.png/ig,'')
+        .replaceAll(/_100.png/ig,'')
+        .replaceAll(/_250.png/ig,'')
+        .replaceAll(/_1000.png/ig,'')
+        .replaceAll(/_10000.png/ig,'')
+        .replace(/.png/ig,'')
         if (i.search(regex) > -1) {
-            response +=`<a href="https://osrs.wiki/${('&#63; &#63; &#63; &#63;'==i)?'%3f %3f %3f %3f':i}" target="_blank">${i}</a></br>`
+            response +=`<div class="rule"><a href="https://osrs.wiki/${('&#63; &#63; &#63; &#63;'==pathName)?'%3f %3f %3f %3f':pathName}" target="_blank">${pathName}</a><img src="https://oldschool.runescape.wiki/images/${filename}"></div>`
         }
     })
     RESULTS.innerHTML = (response == '' ? `\n No NPC found with "${INPUT.value}" in their name, try something different \n` : response)
